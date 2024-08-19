@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 100px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.panel {
+    width: 60px;
+    height: 60px;
+    background-color: #444;
+    color: #ffc107;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* TradingView Container */
+.tradingview-widget-container {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+/* D3.js Chart Container */
+.d3-chart-container {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+/* Data Container */
+.data-container {
+    margin-top: 20px;
+    background-color: #2b2b2b;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.data-container h2 {
+    margin-top: 0;
+    color: #ffc107;
+}
+
+.data-container p {
+    margin: 0;
+}
+
+/* Spread Panel */
+.spread-panel {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spread-value {
+    margin-top: 8px;
+    width: 50px;
+    height: 50px;
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 8px;
+    color: #ffc107;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Separator */
+.separator {
+    width: 60px;
+    height: 2px;
+    background-color: #ffc107;
+    margin: 20px 0;
+}
+
+/* Right-Click Menu */
+#rightClickMenu {
+    position: absolute;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 8px;
+    display: none;
+    z-index: 1000;
+    padding: 5px 0;
+}
+
+#rightClickMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#rightClickMenu ul li {
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#rightClickMenu ul li:hover {
+    background-color: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    .tradingview-widget-container, .d3-chart-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .spread-value {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .separator {
+        width: 50px;
+    }
+}

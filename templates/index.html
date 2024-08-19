@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live TradingView Chart</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/d3chart.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="panel-container">
+                <div id="tvPanel" class="panel">TV Chart</div>
+                <div id="d3Panel" class="panel">D3 Chart</div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div id="tv_chart_container" class="tradingview-widget-container">
+                <div id="tradingview_c8c48"></div>
+            </div>
+            <div id="d3_chart_container" class="tradingview-widget-container" style="display: none;">
+                <!-- D3.js chart will be rendered here -->
+            </div>
+            <div class="data-container">
+                <h2>Market Data</h2>
+                <p id="data-content">Here you can display real-time data, analysis, or any other relevant information.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files should be included at the end of the body -->
+    <script src="https://s3.tradingview.com/tv.js"></script> <!-- TradingView -->
+    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js -->
+    <script src="static/tradingview.js"></script> <!-- TradingView chart logic -->
+    <script src="static/d3chart.js"></script> <!-- D3.js chart logic -->
+</body>
+</html>

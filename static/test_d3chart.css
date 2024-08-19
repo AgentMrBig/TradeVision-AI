@@ -1,0 +1,38 @@
+/* styles.css */
+
+/* General styling for the main container */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+/* Styling for the D3.js chart container */
+#test_d3_chart_container {
+    background-color: #e0f7fa; /* Light blue background */
+    border: 1px solid #004d40; /* Darker border to mimic tradingview styling */
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Axis styling */
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #004d40; /* Darker line color */
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    fill: #004d40; /* Darker text color */
+}
+
+/* Bar styling */
+.bar {
+    fill: #4caf50; /* Similar color to the positive bars in tradingview */
+}
