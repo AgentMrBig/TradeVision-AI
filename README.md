@@ -1,4 +1,3 @@
-
 # TradeVision AI
 
 TradeVision AI is a powerful web application that integrates TradingView and D3.js charting libraries to offer a robust financial charting tool. The app provides users with an interactive experience where they can analyze financial data using both TradingView's advanced charts and custom D3.js charts.
@@ -32,3 +31,54 @@ TradeVision AI is a powerful web application that integrates TradingView and D3.
    ```bash
    git clone <your-repository-url>
    cd TradeVisionAI
+   ```
+
+2. **Install Dependencies:**
+   Ensure that you have Python and Flask installed to run the application.
+
+3. **Run the App:**
+   ```bash
+   flask run
+   ```
+   The app will be available at `http://127.0.0.1:5000/`.
+
+## Screenshots
+
+### TradingView Chart
+![TradingView Chart](https://via.placeholder.com/800x400)
+
+### D3.js Chart
+![D3.js Chart](https://via.placeholder.com/800x400)
+
+## Technology Stack
+
+- **Frontend:**
+  - HTML5
+  - CSS3
+  - JavaScript (D3.js, TradingView)
+- **Backend:**
+  - Python (Flask)
+
+## Future Enhancements
+
+- **Chart Navigation:** Implement scroll zoom and drag-pan functionalities for better chart navigation.
+- **Custom Indicators:** Add support for custom indicators and overlays on the D3.js chart.
+- **User Authentication:** Secure user login to save chart preferences and settings.
+
+## Contributing
+
+We welcome contributions from the community! Please fork this repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+### Icons and Graphs
+
+```plaintext
+⬇️ TradingView Chart
+⬇️ D3.js Chart
+📊 Market Data Display
+```
