@@ -1,6 +1,4 @@
-# Creating the README.md file based on the provided content
 
-readme_content = """
 # TradeVision AI
 
 TradeVision AI is a powerful web application that integrates TradingView and D3.js charting libraries to offer a robust financial charting tool. The app provides users with an interactive experience where they can analyze financial data using both TradingView's advanced charts and custom D3.js charts.
