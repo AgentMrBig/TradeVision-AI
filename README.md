@@ -45,10 +45,10 @@ TradeVision AI is a powerful web application that integrates TradingView and D3.
 ## Screenshots
 
 ### TradingView Chart
-![TradingView Chart](./screenshots/tradingview_chart_current.png)
+![TradingView Chart](./static/screenshots/tradingview_chart_current.png)
 
 ### D3.js Chart
-![D3.js Chart](./screenshots/tradingview_chart_current.png)
+![D3.js Chart](./static/screenshots/tradingview_chart_current.png)
 
 ## Technology Stack
 
