@@ -127,10 +127,29 @@ document.addEventListener('DOMContentLoaded', function() {
                         .attr("y2", y(y.invert(mouseY)));
                 });
 
+            // Block default context menu and show custom menu
+            overlay.on("contextmenu", function(event) {
+                event.preventDefault();
+                showCustomMenu(event);
+            });
+
             console.log("D3 Chart initialized with USD/JPY data.");
             isD3ChartInitialized = true;
         }).catch(function(error) {
             console.error("Error loading data: ", error);
         });
+    }
+
+    function showCustomMenu(event) {
+        const menu = document.getElementById('rightClickMenu');
+
+        menu.style.left = `${event.pageX}px`;
+        menu.style.top = `${event.pageY}px`;
+        menu.style.display = 'block';
+
+        // Hide the menu when clicking outside
+        document.addEventListener('click', () => {
+            menu.style.display = 'none';
+        }, { once: true });
     }
 });
