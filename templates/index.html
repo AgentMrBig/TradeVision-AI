@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live TradingView Chart</title>
-    <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="static/d3chart.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/d3chart.css">
+    <link rel="stylesheet" href="static/css/sidebar.css">
+    <style>
+        /* Additional styles for animated border */
+        .panel.active {
+            border: 2px solid #ff6347;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px #ff6347;
+            }
+            50% {
+                box-shadow: 0 0 15px #ff6347;
+            }
+            100% {
+                box-shadow: 0 0 5px #ff6347;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
@@ -13,11 +33,19 @@
             <div class="panel-container">
                 <div id="tvPanel" class="panel">TV Chart</div>
                 <div id="d3Panel" class="panel">D3 Chart</div>
+                <div id="aiOverlayPanel" class="panel">AI Overlay</div> <!-- New AI Overlay panel button -->
+                <div class="separator"></div>
+                <div id="timeframePanel" class="panel">Timeframe</div>
+                
+                
+                
+
             </div>
         </div>
         <div class="content-wrapper">
             <div id="tv_chart_container" class="tradingview-widget-container">
                 <div id="tradingview_c8c48"></div>
+                <canvas id="canvas-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; pointer-events: none;"></canvas> <!-- Canvas overlay -->
             </div>
             <div id="d3_chart_container" class="tradingview-widget-container" style="display: none;">
                 <!-- D3.js chart will be rendered here -->
@@ -29,10 +57,59 @@
         </div>
     </div>
 
+    
+
     <!-- JavaScript files should be included at the end of the body -->
-    <script src="https://s3.tradingview.com/tv.js"></script> <!-- TradingView -->
-    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js -->
-    <script src="static/tradingview.js"></script> <!-- TradingView chart logic -->
-    <script src="static/d3chart.js"></script> <!-- D3.js chart logic -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="static/js/tradingview.js"></script>
+    <script src="static/js/d3chart.js"></script>
+    <script src="static/js/sidebar.js"></script>
+    <script src="static/js/timeframe.js"></script>
+    <script src="static/js/ContextMenu.js"></script>
+    <script src="static/js/CanvasOverlay.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tvPanel = document.getElementById('tvPanel');
+            const d3Panel = document.getElementById('d3Panel');
+            const aiOverlayPanel = document.getElementById('aiOverlayPanel');
+            const canvasOverlay = document.getElementById('canvas-overlay');
+            const tvChartContainer = document.getElementById('tv_chart_container');
+            const d3ChartContainer = document.getElementById('d3_chart_container');
+
+            function activatePanel(panel) {
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                panel.classList.add('active');
+            }
+
+            tvPanel.addEventListener('click', function() {
+                tvChartContainer.style.display = 'block';
+                d3ChartContainer.style.display = 'none';
+                canvasOverlay.style.display = 'none';
+                activatePanel(tvPanel);
+            });
+
+            d3Panel.addEventListener('click', function() {
+                tvChartContainer.style.display = 'none';
+                d3ChartContainer.style.display = 'block';
+                canvasOverlay.style.display = 'none';
+                activatePanel(d3Panel);
+            });
+
+            aiOverlayPanel.addEventListener('click', function() {
+                const isActive = canvasOverlay.style.display !== 'none';
+                tvChartContainer.style.display = 'block';
+                d3ChartContainer.style.display = 'none';
+
+                if (isActive) {
+                    canvasOverlay.style.display = 'none'; // Hide overlay if already active
+                } else {
+                    canvasOverlay.style.display = 'block'; // Show overlay on click
+                    activatePanel(aiOverlayPanel);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

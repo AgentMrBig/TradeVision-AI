@@ -1,0 +1,49 @@
+.candle.bullish {
+    fill: #4CAF50;
+}
+
+.candle.bearish {
+    fill: #F44336;
+}
+
+.stem {
+    stroke-width: 1.5px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.crosshair line {
+    stroke: #AAA;
+    stroke-dasharray: 3, 3;
+}
+
+.floating-panel {
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+.price-panel, .time-panel {
+    pointer-events: none;
+}
+
+.price-text, .time-text {
+    pointer-events: none;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.grid-line {
+    stroke: #444;
+    stroke-dasharray: 3, 3;
+}

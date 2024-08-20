@@ -5,12 +5,14 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #fff;
+    overflow: hidden; /* Ensure no scrollbars on the body */
 }
 
 /* Main Container */
 .main-container {
     display: flex;
     height: 100vh;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 /* Sidebar Styles */
@@ -21,6 +23,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 .panel-container {
@@ -45,6 +48,41 @@ body {
     text-align: center;
 }
 
+/* Separator */
+.separator {
+    width: 60px;
+    height: 2px;
+    background-color: #ffc107;
+    margin: 20px 0;
+}
+
+/* Timeframe Select Popup */
+.timeframe-select {
+    position: absolute;
+    display: none;
+    background-color: #444;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.timeframe-select ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeframe-select li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.timeframe-select li:hover {
+    background-color: #555;
+}
+
 /* Content Wrapper */
 .content-wrapper {
     flex-grow: 1;
@@ -53,6 +91,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 /* TradingView Container */
@@ -61,6 +100,7 @@ body {
     height: 100%;
     max-height: 100%;
     position: relative;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 /* D3.js Chart Container */
@@ -69,6 +109,7 @@ body {
     height: 100%;
     max-height: 100%;
     position: relative;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 /* Data Container */
@@ -79,6 +120,7 @@ body {
     border-radius: 8px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide scrollbar */
 }
 
 .data-container h2 {
@@ -112,14 +154,6 @@ body {
     align-items: center;
 }
 
-/* Separator */
-.separator {
-    width: 60px;
-    height: 2px;
-    background-color: #ffc107;
-    margin: 20px 0;
-}
-
 /* Right-Click Menu */
 #rightClickMenu {
     position: absolute;
@@ -146,6 +180,33 @@ body {
 
 #rightClickMenu ul li:hover {
     background-color: #444;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.main-container::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar,
+.content-wrapper::-webkit-scrollbar,
+.tradingview-widget-container::-webkit-scrollbar,
+.d3-chart-container::-webkit-scrollbar,
+.data-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Force hide scrollbar across all browsers */
+html,
+body,
+.main-container,
+.sidebar,
+.content-wrapper,
+.tradingview-widget-container,
+.d3-chart-container,
+.data-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html, body {
+    overflow: hidden;
 }
 
 /* Responsive Styles */
