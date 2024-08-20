@@ -1,0 +1,72 @@
+.context-menu {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.context-item {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    pointer-events: all;
+    border: 2px solid #666;
+    transition: border-color 0.3s ease, border-width 0.3s ease;
+}
+
+
+/* Apply hover effect */
+.context-item.hover {
+    border-color: #ff0000;  /* Update to match your button hover effect color */
+    border-width: 4px;
+}
+
+.context-item text {
+    fill: white;
+    pointer-events: none;
+}
+
+/* Positioning the items in a semi-circle around the cursor */
+.context-item:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100px);
+}
+
+.context-item:nth-child(2) {
+    top: 50%;
+    left: 100%;
+    transform: translate(-100px, -50%);
+}
+
+.context-item:nth-child(3) {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50px);
+}
+
+.context-item:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translate(-100px, -50%);
+}
+
+.context-item:nth-child(5) {
+    top: 25%;
+    left: 75%;
+    transform: translate(-50px, -50px);
+}
+
+.context-item:nth-child(6) {
+    top: 75%;
+    left: 25%;
+    transform: translate(-50px, -50px);
+}
