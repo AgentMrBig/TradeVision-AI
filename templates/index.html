@@ -8,23 +8,7 @@
     <link rel="stylesheet" href="static/css/d3chart.css">
     <link rel="stylesheet" href="static/css/sidebar.css">
     <style>
-        /* Additional styles for animated border */
-        .panel.active {
-            border: 2px solid #ff6347;
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 5px #ff6347;
-            }
-            50% {
-                box-shadow: 0 0 15px #ff6347;
-            }
-            100% {
-                box-shadow: 0 0 5px #ff6347;
-            }
-        }
+        
     </style>
 </head>
 <body>
@@ -33,31 +17,45 @@
             <div class="panel-container">
                 <div id="tvPanel" class="panel">TV Chart</div>
                 <div id="d3Panel" class="panel">D3 Chart</div>
-                <div id="aiOverlayPanel" class="panel">AI Overlay</div> <!-- New AI Overlay panel button -->
+                <div id="aiOverlayPanel" class="panel">AI Overlay</div>
                 <div class="separator"></div>
                 <div id="timeframePanel" class="panel">Timeframe</div>
-                
-                
-                
-
             </div>
         </div>
         <div class="content-wrapper">
             <div id="tv_chart_container" class="tradingview-widget-container">
                 <div id="tradingview_c8c48"></div>
-                <canvas id="canvas-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; pointer-events: none;"></canvas> <!-- Canvas overlay -->
+                <canvas id="canvas-overlay"></canvas>
             </div>
             <div id="d3_chart_container" class="tradingview-widget-container" style="display: none;">
                 <!-- D3.js chart will be rendered here -->
             </div>
-            <div class="data-container">
-                <h2>Market Data</h2>
-                <p id="data-content">Here you can display real-time data, analysis, or any other relevant information.</p>
-            </div>
-        </div>
-    </div>
 
-    
+            <div class="data-container">
+                <div class="market-data-panel">
+                    <h3>Market Data</h3>
+                    <div class="ml-agent-output-panel">
+                        <!-- ML Agent Console Output will go here -->
+                    </div>
+                </div>
+                <div class="mt4-data-panel">
+                    <h3>MT4 Data Received</h3>
+                    <div class="ml-agent-output-panel">
+                        <!-- ML Agent Console Output will go here -->
+                    </div>
+                </div>
+                <div class="ml-agent-panel">
+                    <h3>ML Agent Console</h3>
+                    <div class="ml-agent-output-panel">
+                        <!-- ML Agent Console Output will go here -->
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        
+    </div>
 
     <!-- JavaScript files should be included at the end of the body -->
     <script src="https://s3.tradingview.com/tv.js"></script>
